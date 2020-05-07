@@ -11,6 +11,6 @@ import Foundation
 struct TestData: Codable {
     let id: Int
     let title: String
-    let dataString: String
+    let testString: String
     let color: String
 }
