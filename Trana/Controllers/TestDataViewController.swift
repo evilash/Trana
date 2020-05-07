@@ -31,7 +31,7 @@ class TestDataViewController: UIViewController {
 
 extension TestDataViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        if let text = textView.text {
+        if let text = testData {
             counterLabel.text = !text.isEmpty ? "counter: \(text.count)" : "counter: "
         } else {
             counterLabel.text = "Cannot get data. Please try again later"
