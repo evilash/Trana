@@ -19,6 +19,7 @@ class TestDataListViewController: UIViewController {
     }
     
     @IBAction func pressedAddData(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: SegueIdentifier.listToData, sender: self)
     }
 }
 

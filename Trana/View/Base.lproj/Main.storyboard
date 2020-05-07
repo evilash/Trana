@@ -30,7 +30,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jh6-ld-4sr">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="ykM-fH-nOI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ykM-fH-nOI">
                             <connections>
                                 <action selector="pressedAddData:" destination="BYZ-38-t0r" id="c6B-bE-nTh"/>
                             </connections>
@@ -38,7 +38,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="testDataTableView" destination="uoi-ep-4Bp" id="ItY-4F-CNa"/>
-                        <segue destination="aer-C1-dRg" kind="show" id="o1H-rG-tou"/>
+                        <segue destination="aer-C1-dRg" kind="show" identifier="ListToData" id="o1H-rG-tou"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
