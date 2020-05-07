@@ -12,13 +12,7 @@ class TestDataViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var testDataTextView: UITextView!
     @IBOutlet weak var counterLabel: UILabel!
-        
-    var testData: String? {
-        guard let testDataString = testDataTextView.text else { return nil }
-        
-        return testDataString
-    }
-    
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +25,7 @@ class TestDataViewController: UIViewController {
 
 extension TestDataViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        if let text = testData {
+        if let text = textView.text {
             counterLabel.text = !text.isEmpty ? "counter: \(text.count)" : "counter: "
         } else {
             counterLabel.text = "Cannot get data. Please try again later"
