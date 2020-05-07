@@ -11,6 +11,7 @@ import UIKit
 class TestDataViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var testDataTextView: UITextView!
+    @IBOutlet weak var counterLabel: UILabel!
         
     var testData: String? {
         guard let testDataString = testDataTextView.text else { return nil }
@@ -22,6 +23,18 @@ class TestDataViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .randomBackgroundColor
+        
+        testDataTextView.delegate = self
     }
 
+}
+
+extension TestDataViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if let text = textView.text {
+            counterLabel.text = !text.isEmpty ? "counter: \(text.count)" : "counter: "
+        } else {
+            counterLabel.text = "Cannot get data. Please try again later"
+        }
+    }
 }
