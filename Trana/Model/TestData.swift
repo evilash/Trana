@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct StringData {
+    let stringData: [TestData]
+}
+
 struct TestData: Codable {
     let id: Int
     let title: String
