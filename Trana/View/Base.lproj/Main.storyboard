@@ -65,13 +65,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNs-4k-0p9">
+                                <rect key="frame" x="255" y="862" width="139" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="m6h-ev-FFQ" firstAttribute="top" secondItem="Zip-JG-snZ" secondAttribute="top" constant="34" id="2yV-ef-rid"/>
                             <constraint firstItem="m6h-ev-FFQ" firstAttribute="leading" secondItem="Zip-JG-snZ" secondAttribute="leading" constant="35" id="4On-U2-FSk"/>
                             <constraint firstAttribute="bottom" secondItem="Yzx-Sa-ASz" secondAttribute="bottom" id="6tr-Cn-Mzn"/>
+                            <constraint firstItem="Zip-JG-snZ" firstAttribute="trailing" secondItem="JNs-4k-0p9" secondAttribute="trailing" constant="20" id="HU9-5A-YIh"/>
+                            <constraint firstItem="JNs-4k-0p9" firstAttribute="leading" secondItem="Zip-JG-snZ" secondAttribute="leading" constant="255" id="ILc-bl-vUI"/>
                             <constraint firstItem="Yzx-Sa-ASz" firstAttribute="leading" secondItem="Zip-JG-snZ" secondAttribute="leading" id="IPR-Ua-AzZ"/>
+                            <constraint firstItem="JNs-4k-0p9" firstAttribute="bottom" secondItem="Zip-JG-snZ" secondAttribute="bottom" id="Whk-iv-K0b"/>
                             <constraint firstItem="Yzx-Sa-ASz" firstAttribute="trailing" secondItem="Zip-JG-snZ" secondAttribute="trailing" id="bP6-eX-3kT"/>
                             <constraint firstItem="Zip-JG-snZ" firstAttribute="trailing" secondItem="m6h-ev-FFQ" secondAttribute="trailing" constant="20" id="bUS-wU-Wx0"/>
                             <constraint firstItem="Yzx-Sa-ASz" firstAttribute="top" secondItem="m6h-ev-FFQ" secondAttribute="bottom" constant="30" id="pvu-m2-cyQ"/>
@@ -80,6 +89,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gr1-NG-Qbe"/>
                     <connections>
+                        <outlet property="counterLabel" destination="JNs-4k-0p9" id="pyx-Qa-Cq0"/>
                         <outlet property="testDataTextView" destination="Yzx-Sa-ASz" id="nae-gm-h5F"/>
                         <outlet property="titleTextField" destination="m6h-ev-FFQ" id="1Q3-4F-XZb"/>
                     </connections>
