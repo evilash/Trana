@@ -17,6 +17,10 @@ class TestDataListViewController: UIViewController {
         testDataTableView.dataSource = self
         testDataTableView.delegate = self
     }
+    
+    @IBAction func pressedAddData(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: SegueIdentifier.listToData, sender: self)
+    }
 }
 
 extension TestDataListViewController: UITableViewDataSource {
