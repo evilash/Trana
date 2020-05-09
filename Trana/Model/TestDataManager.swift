@@ -12,7 +12,7 @@ struct TestDataManager {
     
     private static var jsonFileURL: URL? {
         do {
-            let pathToDocumentDir = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let pathToDocumentDir = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             let filePath = pathToDocumentDir.appendingPathComponent("TestData.json")
             
             return filePath
