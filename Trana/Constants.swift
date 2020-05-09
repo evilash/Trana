@@ -1,5 +1,5 @@
 //
-//  SegueIdentifier.swift
+//  Constants.swift
 //  Trana
 //
 //  Created by Matt M Smith on 5/7/20.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-struct SegueIdentifier {
-    static let listToData = "ListToData"
+struct Constants {
+    struct SegueIdentifier {
+        static let listToData = "ListToData"
+    }
 }
