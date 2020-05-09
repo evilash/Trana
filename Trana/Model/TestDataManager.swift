@@ -12,25 +12,16 @@ struct TestDataManager {
     
     private static var jsonFileURL: URL? {
         do {
-            let pathToDocumentDir = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            let filePath = pathToDocumentDir.appendingPathComponent("TestData.json")
-            
-            return filePath
+            let url = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(Constants.File.name)
+
+            return url
         } catch {
             print(error)
             return nil
         }
     }
     
-    static func checkForJSONFile() {
-        guard let filePath = jsonFileURL?.relativePath else { return }
-        
-        if !FileManager.default.fileExists(atPath: filePath) {
-            createNewFile()
-        }
-    }
-            
-    private static func createNewFile() {
+    static func createNewJSONFile() {
         let dataSkeleton: [String: Any] = ["testData": [["id": 1, "title": "", "testString": "", "color": ""]]]
         
         do {

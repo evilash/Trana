@@ -19,8 +19,6 @@ class TestDataListViewController: UIViewController {
     }
     
     @IBAction func pressedAddData(_ sender: UIBarButtonItem) {
-        TestDataManager.checkForJSONFile()
-
         performSegue(withIdentifier: Constants.SegueIdentifier.listToData, sender: self)
     }
 }

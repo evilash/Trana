@@ -12,4 +12,8 @@ struct Constants {
     struct SegueIdentifier {
         static let listToData = "ListToData"
     }
+    
+    struct File {
+        static let name = "TestData.json"
+    }
 }
