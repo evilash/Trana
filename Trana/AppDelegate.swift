@@ -13,7 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         DispatchQueue.global(qos: .background).async {
-            TestDataManager.createNewJSONFile()
+            let testDataManager = TestDataManager()
+            testDataManager.createNewJSONFile()
         }
         
         return true
