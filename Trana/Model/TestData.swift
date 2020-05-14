@@ -8,13 +8,19 @@
 
 import Foundation
 
-struct StringData {
-    let stringData: [TestData]
+struct TestData: Codable {
+    var stringData: [StringData]
 }
 
-struct TestData: Codable {
+struct StringData: Codable {
     let id: Int
     let title: String
     let testString: String
-    let color: String
+    let color: [RGBValues]
+}
+
+struct RGBValues: Codable {
+    let r: Double
+    let g: Double
+    let b: Double
 }

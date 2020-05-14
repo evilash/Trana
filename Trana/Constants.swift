@@ -14,6 +14,6 @@ struct Constants {
     }
     
     struct File {
-        static let name = "TestData.json"
+        static let name = "TranaTestData.json"
     }
 }

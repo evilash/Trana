@@ -11,6 +11,8 @@ import UIKit
 class TestDataListViewController: UIViewController {
     @IBOutlet weak var testDataTableView: UITableView!
     
+    let testDataManager = TestDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +21,7 @@ class TestDataListViewController: UIViewController {
     }
     
     @IBAction func pressedAddData(_ sender: UIBarButtonItem) {
+        testDataManager.createNewTestDataSet()
         performSegue(withIdentifier: Constants.SegueIdentifier.listToData, sender: self)
     }
 }
