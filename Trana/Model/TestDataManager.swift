@@ -43,7 +43,7 @@ struct TestDataManager {
         guard let url = fileURL else { return }
         var stringDataArray = testData.stringData
         guard let lastID = stringDataArray.last?.id else { return }
-        let id = lastID + 1
+        let id = stringDataArray.count != 0 ? lastID + 1 : 0
         let rgbValues = RGBValues(r: 1.1, g: 2.2, b: 3.3)
         let stringData = StringData(id: id, title: "test", testString: "testing", color: [rgbValues])
         
