@@ -9,7 +9,11 @@
 import Foundation
 
 struct TestData: Codable {
-    var stringData: [StringData]
+    var stringDataArray: [StringData]
+    
+    enum CodingKeys: String, CodingKey {
+        case stringDataArray = "stringData"
+    }
 }
 
 struct StringData: Codable {

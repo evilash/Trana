@@ -9,59 +9,36 @@
 import Foundation
 
 struct TestDataManager {
-    
-    private let fileURL: URL? = {
-        do {
-            let url = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(Constants.File.name)
-            print(url)
-            
-            return url
-        } catch {
-            print(error)
-            return nil
-        }
-    }()
-    
-    func createNewJSONFile() {
-        guard let url = fileURL else { return }
-        
-        if FileManager.default.contents(atPath: url.relativePath) == nil {
-        let jsonTemplate = ["stringData":[["id": 0, "title": "Test", "testString": "testing", "color": [["r": 0.0, "g": 0.0, "b": 0.0]]]]]
-            
-            do {
-                let data = try JSONSerialization.data(withJSONObject: jsonTemplate, options: .prettyPrinted)
-
-                try data.write(to: url, options: .atomic)
-            } catch {
-                print(error)
-            }
-        }
-    }
+    let jsonFileManager = JSONFileManager()
     
     func createNewTestDataSet() {
-        guard let testData = getTestData() else { return }
-        guard let url = fileURL else { return }
-        var stringDataArray = testData.stringData
-        guard let lastID = stringDataArray.last?.id else { return }
-        let id = stringDataArray.count != 0 ? lastID + 1 : 0
-        let rgbValues = RGBValues(r: 1.1, g: 2.2, b: 3.3)
-        let stringData = StringData(id: id, title: "test", testString: "testing", color: [rgbValues])
-        
-        stringDataArray.append(stringData)
-
-        let newTestDataObject = TestData(stringData: stringDataArray)
-        
-        do {
-            let encode = JSONEncoder()
-            try encode.encode(newTestDataObject).write(to: url)
+        let newStringDataArray = returnNewStringDataArray { (stringDataArray) in
+            let lastID = stringDataArray.last?.id ?? 0
+            let id = stringDataArray.count != 0 ? lastID + 1 : 0
+            let rgbValues = RGBValues(r: 1.1, g: 2.2, b: 3.3)
+            let stringData = StringData(id: id, title: "test", testString: "testing", color: [rgbValues])
             
-        } catch {
-            print(error)
+            return stringData
         }
+
+        jsonFileManager.writeToFile(with: newStringDataArray)
     }
     
+    func returnNewStringDataArray(closure: ([StringData]) -> StringData) -> [StringData] {
+        var stringDataArray = [StringData]()
+
+        if var testData = getTestData() {
+            let stringData = closure(testData.stringDataArray)
+            testData.stringDataArray.append(stringData)
+            
+            stringDataArray = testData.stringDataArray
+        }
+        
+        return stringDataArray
+    }
+
     private func getTestData() -> TestData? {
-        guard let url = fileURL else { return nil }
+        guard let url = jsonFileManager.fileURL else { return nil }
         let decoder = JSONDecoder()
         
         do {
