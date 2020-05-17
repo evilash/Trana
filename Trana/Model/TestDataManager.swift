@@ -9,7 +9,7 @@
 import Foundation
 
 struct TestDataManager {
-    let jsonFileManager = JSONFileManager()
+    private let jsonFileManager = JSONFileManager()
     
     func createNewTestDataSet() {
         let newStringDataArray = returnNewStringDataArray { (stringDataArray) in
@@ -24,7 +24,7 @@ struct TestDataManager {
         jsonFileManager.writeToFile(with: newStringDataArray)
     }
     
-    func returnNewStringDataArray(closure: ([StringData]) -> StringData) -> [StringData] {
+    private func returnNewStringDataArray(closure: ([StringData]) -> StringData) -> [StringData] {
         var stringDataArray = [StringData]()
 
         if var testData = getTestData() {
