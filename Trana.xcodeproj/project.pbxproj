@@ -10,7 +10,6 @@
 		C9317A28246E82C8009D3E39 /* JSONFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9317A27246E82C8009D3E39 /* JSONFileManager.swift */; };
 		C9D65F612463A69E001BAEFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F602463A69E001BAEFF /* AppDelegate.swift */; };
 		C9D65F632463A69E001BAEFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F622463A69E001BAEFF /* SceneDelegate.swift */; };
-		C9D65F652463A69E001BAEFF /* TestDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F642463A69E001BAEFF /* TestDataTableViewController.swift */; };
 		C9D65F682463A69E001BAEFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D65F662463A69E001BAEFF /* Main.storyboard */; };
 		C9D65F6A2463A69F001BAEFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9D65F692463A69F001BAEFF /* Assets.xcassets */; };
 		C9D65F6D2463A69F001BAEFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D65F6B2463A69F001BAEFF /* LaunchScreen.storyboard */; };
@@ -18,6 +17,7 @@
 		C9D65F792463AB3D001BAEFF /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F782463AB3D001BAEFF /* UIColor+random.swift */; };
 		C9D65F7B2463B93E001BAEFF /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F7A2463B93E001BAEFF /* TestData.swift */; };
 		C9E29586246D01BB00901D7F /* TestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E29585246D01BB00901D7F /* TestDataManager.swift */; };
+		C9EB236C24764E2900346C19 /* TestDataListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB236B24764E2800346C19 /* TestDataListViewController.swift */; };
 		C9FCEEDA24652AFA001957B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEED924652AF9001957B8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,6 @@
 		C9D65F5D2463A69E001BAEFF /* Trana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D65F602463A69E001BAEFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9D65F622463A69E001BAEFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9D65F642463A69E001BAEFF /* TestDataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataTableViewController.swift; sourceTree = "<group>"; };
 		C9D65F672463A69E001BAEFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C9D65F692463A69F001BAEFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9D65F6C2463A69F001BAEFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		C9D65F782463AB3D001BAEFF /* UIColor+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
 		C9D65F7A2463B93E001BAEFF /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		C9E29585246D01BB00901D7F /* TestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataManager.swift; sourceTree = "<group>"; };
+		C9EB236B24764E2800346C19 /* TestDataListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataListViewController.swift; sourceTree = "<group>"; };
 		C9FCEED924652AF9001957B8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,8 +85,8 @@
 		C9D65F762463A946001BAEFF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C9D65F642463A69E001BAEFF /* TestDataTableViewController.swift */,
 				C9D65F742463A8E8001BAEFF /* TestDataViewController.swift */,
+				C9EB236B24764E2800346C19 /* TestDataListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 				C9D65F752463A8E8001BAEFF /* TestDataViewController.swift in Sources */,
 				C9317A28246E82C8009D3E39 /* JSONFileManager.swift in Sources */,
 				C9D65F792463AB3D001BAEFF /* UIColor+random.swift in Sources */,
-				C9D65F652463A69E001BAEFF /* TestDataTableViewController.swift in Sources */,
+				C9EB236C24764E2900346C19 /* TestDataListViewController.swift in Sources */,
 				C9D65F7B2463B93E001BAEFF /* TestData.swift in Sources */,
 				C9D65F612463A69E001BAEFF /* AppDelegate.swift in Sources */,
 				C9D65F632463A69E001BAEFF /* SceneDelegate.swift in Sources */,
