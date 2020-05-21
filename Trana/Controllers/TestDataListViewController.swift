@@ -32,7 +32,8 @@ extension TestDataListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellID, for: indexPath)
+        cell.textLabel?.text = testDataManager.getTitle(from: indexPath.row)
         return cell
     }
 }

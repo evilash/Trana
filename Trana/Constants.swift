@@ -13,6 +13,10 @@ struct Constants {
         static let listToData = "ListToData"
     }
     
+    struct TableView {
+        static let cellID = "testDataCell"
+    }
+    
     struct File {
         static let name = "TranaTestData.json"
     }

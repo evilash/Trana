@@ -24,6 +24,15 @@ struct TestDataManager {
         jsonFileManager.writeToFile(with: newStringDataArray)
     }
     
+    func getTitle(from index: Int) -> String {
+        guard let testData = getTestData() else { return "" }
+        let stringDataArray = testData.stringDataArray[index]
+        let titleFromArray = stringDataArray.title
+        let title = !titleFromArray.isEmpty ? titleFromArray : stringDataArray.testString
+        
+        return title
+    }
+    
     private func returnNewStringDataArray(closure: ([StringData]) -> StringData) -> [StringData] {
         var stringDataArray = [StringData]()
 
