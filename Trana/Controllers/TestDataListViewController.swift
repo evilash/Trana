@@ -12,6 +12,7 @@ class TestDataListViewController: UIViewController {
     @IBOutlet weak var testDataTableView: UITableView!
     
     let testDataManager = TestDataManager()
+    let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,8 @@ class TestDataListViewController: UIViewController {
     
     @IBAction func pressedAddData(_ sender: UIBarButtonItem) {
         testDataManager.createNewTestDataSet()
-        performSegue(withIdentifier: Constants.SegueIdentifier.listToData, sender: self)
+        let testDataVC = mainStoryBoard.instantiateViewController(identifier: Constants.Storyboard.id)
+        present(testDataVC, animated: true, completion: nil)
     }
 }
 

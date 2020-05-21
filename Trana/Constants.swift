@@ -13,6 +13,10 @@ struct Constants {
         static let listToData = "ListToData"
     }
     
+    struct Storyboard {
+        static let id = "TestDataViewController"
+    }
+    
     struct TableView {
         static let cellID = "testDataCell"
     }
