@@ -11,6 +11,12 @@ import Foundation
 struct TestDataManager {
     private let jsonFileManager = JSONFileManager()
     
+    var arrayCount: Int {
+        guard let testData = getTestData() else { return 0 }
+        
+        return testData.stringDataArray.count
+    }
+    
     func createNewTestDataSet() {
         let newStringDataArray = returnNewStringDataArray { (stringDataArray) in
             let lastID = stringDataArray.last?.id ?? 0
