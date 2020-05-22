@@ -30,13 +30,33 @@ struct TestDataManager {
         jsonFileManager.writeToFile(with: newStringDataArray)
     }
     
-    func getTitle(from index: Int) -> String {
-        guard let testData = getTestData() else { return "" }
-        let stringDataArray = testData.stringDataArray[index]
-        let titleFromArray = stringDataArray.title
-        let title = !titleFromArray.isEmpty ? titleFromArray : stringDataArray.testString
+    func getTitleForCell(from index: Int) -> String {
+        let title = getStringData(from: index) { (stringData) in
+            let titleFromArray = stringData.title
+            let title = !titleFromArray.isEmpty ? titleFromArray : stringData.testString
+            return title
+        }
         
         return title
+    }
+    
+    func getTitle(from index: Int) -> String {
+        let title = getStringData(from: index) { $0.title }
+        
+        return title
+    }
+    
+    func getTestString(from index: Int) -> String {
+        let testString = getStringData(from: index) { $0.testString }
+        
+        return testString
+    }
+    
+    private func getStringData(from index: Int, closure: (StringData) -> String) -> String {
+        guard let testData = getTestData() else { return "" }
+        let string = closure(testData.stringDataArray[index])
+        
+        return string
     }
     
     private func returnNewStringDataArray(closure: ([StringData]) -> StringData) -> [StringData] {
