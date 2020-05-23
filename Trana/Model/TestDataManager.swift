@@ -33,7 +33,7 @@ struct TestDataManager {
     func getTitleForCell(from index: Int) -> String {
         let title = getStringData(from: index) { (stringData) in
             let titleFromArray = stringData.title
-            let title = !titleFromArray.isEmpty ? titleFromArray : stringData.testString
+            let title = !titleFromArray.isEmpty ? titleFromArray : "Test Set \(stringData.id)"
             return title
         }
         
