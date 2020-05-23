@@ -21,7 +21,19 @@ class TestDataViewController: UIViewController {
         
         view.backgroundColor = .randomBackgroundColor
         
+        testDataTextView.delegate = self
+        
         titleTextField.text = titleString
         testDataTextView.text = testString
+    }
+}
+
+extension TestDataViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if let text = textView.text {
+            counterLabel.text = "counter: \(text.count)"
+        } else {
+            counterLabel.text = "Cannot get data. Please try again later"
+        }
     }
 }
