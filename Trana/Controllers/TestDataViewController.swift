@@ -25,6 +25,7 @@ class TestDataViewController: UIViewController {
         
         titleTextField.text = titleString
         testDataTextView.text = testString
+        counterLabel.text = "counter: \(testString.count)"
     }
 }
 
