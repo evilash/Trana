@@ -52,8 +52,8 @@ extension TestDataTableViewController: UITableViewDelegate {
             
             destination.titleString = testDataManager.getTitle(from: selectedRow)
             destination.testString = testDataManager.getTestString(from: selectedRow)
+            
+            self.selectedRow = nil
         }
-        
-        selectedRow = nil
     }
 }
