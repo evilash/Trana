@@ -12,7 +12,7 @@ class TestDataTableViewController: UIViewController {
     @IBOutlet weak var testDataTableView: UITableView!
     
     let testDataManager = TestDataManager()
-    let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+    var selectedRow: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,7 @@ class TestDataTableViewController: UIViewController {
     
     @IBAction func pressedAddData(_ sender: UIBarButtonItem) {
         testDataManager.createNewTestDataSet()
-        let testDataVC = mainStoryBoard.instantiateViewController(identifier: Constants.Storyboard.id) as! TestDataViewController
-        
-        present(testDataVC, animated: true, completion: nil)
+        performSegue(withIdentifier: "ListToData", sender: self)
     }
 }
 
@@ -44,11 +42,18 @@ extension TestDataTableViewController: UITableViewDataSource {
 
 extension TestDataTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let testDataVC = mainStoryBoard.instantiateViewController(identifier: Constants.Storyboard.id) as! TestDataViewController
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "ListToData", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let selectedRow = selectedRow {
+            let destination = segue.destination as! TestDataViewController
+            
+            destination.titleString = testDataManager.getTitle(from: selectedRow)
+            destination.testString = testDataManager.getTestString(from: selectedRow)
+        }
         
-        testDataVC.titleString = testDataManager.getTitle(from: indexPath.row)
-        testDataVC.testString = testDataManager.getTestString(from: indexPath.row)
-        
-        present(testDataVC, animated: true, completion: nil)
+        selectedRow = nil
     }
 }
