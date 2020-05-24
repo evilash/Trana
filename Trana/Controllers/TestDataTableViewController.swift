@@ -1,5 +1,5 @@
 //
-//  TestDataListViewController.swift
+//  TestDataTableViewController.swift
 //  Trana
 //
 //  Created by Matt M Smith on 5/6/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestDataListViewController: UIViewController {
+class TestDataTableViewController: UIViewController {
     @IBOutlet weak var testDataTableView: UITableView!
     
     let testDataManager = TestDataManager()
@@ -29,7 +29,7 @@ class TestDataListViewController: UIViewController {
     }
 }
 
-extension TestDataListViewController: UITableViewDataSource {
+extension TestDataTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return testDataManager.arrayCount
     }
@@ -42,7 +42,7 @@ extension TestDataListViewController: UITableViewDataSource {
     }
 }
 
-extension TestDataListViewController: UITableViewDelegate {
+extension TestDataTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let testDataVC = mainStoryBoard.instantiateViewController(identifier: Constants.Storyboard.id) as! TestDataViewController
         

@@ -17,7 +17,7 @@
 		C9D65F792463AB3D001BAEFF /* UIColor+random.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F782463AB3D001BAEFF /* UIColor+random.swift */; };
 		C9D65F7B2463B93E001BAEFF /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F7A2463B93E001BAEFF /* TestData.swift */; };
 		C9E29586246D01BB00901D7F /* TestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E29585246D01BB00901D7F /* TestDataManager.swift */; };
-		C9EB236C24764E2900346C19 /* TestDataListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB236B24764E2800346C19 /* TestDataListViewController.swift */; };
+		C9EB236C24764E2900346C19 /* TestDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB236B24764E2800346C19 /* TestDataTableViewController.swift */; };
 		C9FCEEDA24652AFA001957B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEED924652AF9001957B8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		C9D65F782463AB3D001BAEFF /* UIColor+random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+random.swift"; sourceTree = "<group>"; };
 		C9D65F7A2463B93E001BAEFF /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		C9E29585246D01BB00901D7F /* TestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataManager.swift; sourceTree = "<group>"; };
-		C9EB236B24764E2800346C19 /* TestDataListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataListViewController.swift; sourceTree = "<group>"; };
+		C9EB236B24764E2800346C19 /* TestDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataTableViewController.swift; sourceTree = "<group>"; };
 		C9FCEED924652AF9001957B8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				C9D65F742463A8E8001BAEFF /* TestDataViewController.swift */,
-				C9EB236B24764E2800346C19 /* TestDataListViewController.swift */,
+				C9EB236B24764E2800346C19 /* TestDataTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 				C9D65F752463A8E8001BAEFF /* TestDataViewController.swift in Sources */,
 				C9317A28246E82C8009D3E39 /* JSONFileManager.swift in Sources */,
 				C9D65F792463AB3D001BAEFF /* UIColor+random.swift in Sources */,
-				C9EB236C24764E2900346C19 /* TestDataListViewController.swift in Sources */,
+				C9EB236C24764E2900346C19 /* TestDataTableViewController.swift in Sources */,
 				C9D65F7B2463B93E001BAEFF /* TestData.swift in Sources */,
 				C9D65F612463A69E001BAEFF /* AppDelegate.swift in Sources */,
 				C9D65F632463A69E001BAEFF /* SceneDelegate.swift in Sources */,
