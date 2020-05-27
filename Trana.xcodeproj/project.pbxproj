@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C919E96A247E265400517288 /* String+count.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919E969247E265400517288 /* String+count.swift */; };
 		C9317A28246E82C8009D3E39 /* JSONFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9317A27246E82C8009D3E39 /* JSONFileManager.swift */; };
 		C9D65F612463A69E001BAEFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F602463A69E001BAEFF /* AppDelegate.swift */; };
 		C9D65F632463A69E001BAEFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F622463A69E001BAEFF /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C919E969247E265400517288 /* String+count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+count.swift"; sourceTree = "<group>"; };
 		C9317A27246E82C8009D3E39 /* JSONFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileManager.swift; sourceTree = "<group>"; };
 		C9D65F5D2463A69E001BAEFF /* Trana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D65F602463A69E001BAEFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C919E96B247E265B00517288 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C919E969247E265400517288 /* String+count.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		C9D65F542463A69D001BAEFF = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 				C9D65F622463A69E001BAEFF /* SceneDelegate.swift */,
 				C9D65F7C2463B944001BAEFF /* Model */,
 				C9D65F762463A946001BAEFF /* Controllers */,
+				C919E96B247E265B00517288 /* Extension */,
 				C9D65F772463A950001BAEFF /* View */,
 				C9D65F692463A69F001BAEFF /* Assets.xcassets */,
 				C9D65F6B2463A69F001BAEFF /* LaunchScreen.storyboard */,
@@ -188,6 +199,7 @@
 				C9D65F7B2463B93E001BAEFF /* TestData.swift in Sources */,
 				C9D65F612463A69E001BAEFF /* AppDelegate.swift in Sources */,
 				C9D65F632463A69E001BAEFF /* SceneDelegate.swift in Sources */,
+				C919E96A247E265400517288 /* String+count.swift in Sources */,
 				C9FCEEDA24652AFA001957B8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

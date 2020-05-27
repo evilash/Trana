@@ -17,6 +17,7 @@ struct TestDataManager {
         return testData.stringDataArray.count
     }
     
+    //MARK: - Public functions
     func createNewTestDataSet() {
         let newStringDataArray = returnNewStringDataArray { (stringDataArray) in
             let lastID = stringDataArray.last?.id ?? 0
@@ -46,6 +47,7 @@ struct TestDataManager {
         return testString
     }
     
+    //MARK: - Private functions
     private func getStringData(from index: Int, closure: (StringData) -> String) -> String {
         guard let testData = getTestData() else { return "" }
         let string = closure(testData.stringDataArray[index])
