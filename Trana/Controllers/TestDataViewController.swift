@@ -46,7 +46,7 @@ extension TestDataViewController: UITextViewDelegate {
 extension TestDataViewController {
     fileprivate func displayStringCounts(from str: String) {
         stringCountLabel.text = "string count: \(str.count)"
-        alphaCountLabel.text = "alpha char count: \(str.alphaCount)"
+        alphaCountLabel.text = "alpha count: \(str.alphaCount)"
         numberCounterLabel.text = "number count: \(str.numericCount)"
         symbolCounterLabel.text = "symbol count: \(str.specialCharacterCount)"
     }
