@@ -11,7 +11,10 @@ import UIKit
 class TestDataViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var testDataTextView: UITextView!
-    @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var stringCountLabel: UILabel!
+    @IBOutlet weak var alphaCountLabel: UILabel!
+    @IBOutlet weak var numberCounterLabel: UILabel!
+    @IBOutlet weak var symbolCounterLabel: UILabel!
     
     var titleString = ""
     var testString = ""
@@ -25,16 +28,26 @@ class TestDataViewController: UIViewController {
         
         titleTextField.text = titleString
         testDataTextView.text = testString
-        counterLabel.text = "counter: \(testString.count)"
+        
+        displayStringCounts(from: testString)
     }
 }
 
 extension TestDataViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if let text = textView.text {
-            counterLabel.text = "counter: \(text.count)"
+            displayStringCounts(from: text)
         } else {
-            counterLabel.text = "Cannot get data. Please try again later"
+            stringCountLabel.text = "Cannot get data. Please try again later"
         }
+    }
+}
+
+extension TestDataViewController {
+    fileprivate func displayStringCounts(from str: String) {
+        stringCountLabel.text = "string count: \(str.count)"
+        alphaCountLabel.text = "alpha char count: \(str.alphaCount)"
+        numberCounterLabel.text = "number count: \(str.numericCount)"
+        symbolCounterLabel.text = "symbol count: \(str.specialCharacterCount)"
     }
 }

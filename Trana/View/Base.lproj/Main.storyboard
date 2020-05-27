@@ -74,8 +74,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNs-4k-0p9">
-                                <rect key="frame" x="255" y="862" width="139" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNs-4k-0p9">
+                                <rect key="frame" x="15" y="831" width="195" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOm-6y-Yps">
+                                <rect key="frame" x="15" y="788.5" width="195" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3k8-g8-Mf5">
+                                <rect key="frame" x="15" y="748" width="195" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-MH-p9c">
+                                <rect key="frame" x="15" y="705" width="175" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -86,19 +104,32 @@
                             <constraint firstItem="m6h-ev-FFQ" firstAttribute="top" secondItem="Zip-JG-snZ" secondAttribute="top" constant="34" id="2yV-ef-rid"/>
                             <constraint firstItem="m6h-ev-FFQ" firstAttribute="leading" secondItem="Zip-JG-snZ" secondAttribute="leading" constant="35" id="4On-U2-FSk"/>
                             <constraint firstAttribute="bottom" secondItem="Yzx-Sa-ASz" secondAttribute="bottom" id="6tr-Cn-Mzn"/>
-                            <constraint firstItem="Zip-JG-snZ" firstAttribute="trailing" secondItem="JNs-4k-0p9" secondAttribute="trailing" constant="20" id="HU9-5A-YIh"/>
-                            <constraint firstItem="JNs-4k-0p9" firstAttribute="leading" secondItem="Zip-JG-snZ" secondAttribute="leading" constant="255" id="ILc-bl-vUI"/>
+                            <constraint firstItem="Yzx-Sa-ASz" firstAttribute="leading" secondItem="Zip-JG-snZ" secondAttribute="leading" constant="15" id="BKq-ar-x2D"/>
+                            <constraint firstItem="Zip-JG-snZ" firstAttribute="trailing" secondItem="gdf-MH-p9c" secondAttribute="trailing" constant="224" id="Df1-G8-uyd"/>
+                            <constraint firstItem="kOm-6y-Yps" firstAttribute="top" secondItem="3k8-g8-Mf5" secondAttribute="bottom" constant="19.5" id="Due-XE-bHd"/>
                             <constraint firstItem="Yzx-Sa-ASz" firstAttribute="leading" secondItem="Zip-JG-snZ" secondAttribute="leading" id="IPR-Ua-AzZ"/>
-                            <constraint firstItem="JNs-4k-0p9" firstAttribute="bottom" secondItem="Zip-JG-snZ" secondAttribute="bottom" id="Whk-iv-K0b"/>
+                            <constraint firstItem="3k8-g8-Mf5" firstAttribute="trailing" secondItem="kOm-6y-Yps" secondAttribute="trailing" id="ONC-Pp-wDe"/>
+                            <constraint firstItem="3k8-g8-Mf5" firstAttribute="leading" secondItem="kOm-6y-Yps" secondAttribute="leading" id="Pef-IW-uDf"/>
+                            <constraint firstItem="kOm-6y-Yps" firstAttribute="leading" secondItem="JNs-4k-0p9" secondAttribute="leading" id="QKi-Y1-SYH"/>
+                            <constraint firstItem="gdf-MH-p9c" firstAttribute="leading" secondItem="Zip-JG-snZ" secondAttribute="leading" constant="15" id="ZlU-P8-UOJ"/>
                             <constraint firstItem="Yzx-Sa-ASz" firstAttribute="trailing" secondItem="Zip-JG-snZ" secondAttribute="trailing" id="bP6-eX-3kT"/>
                             <constraint firstItem="Zip-JG-snZ" firstAttribute="trailing" secondItem="m6h-ev-FFQ" secondAttribute="trailing" constant="20" id="bUS-wU-Wx0"/>
+                            <constraint firstItem="kOm-6y-Yps" firstAttribute="trailing" secondItem="JNs-4k-0p9" secondAttribute="trailing" id="i3Y-xv-qeJ"/>
+                            <constraint firstItem="Zip-JG-snZ" firstAttribute="trailing" secondItem="3k8-g8-Mf5" secondAttribute="trailing" constant="204" id="ij0-zM-OWi"/>
+                            <constraint firstItem="JNs-4k-0p9" firstAttribute="top" secondItem="kOm-6y-Yps" secondAttribute="bottom" constant="21.5" id="ndx-hO-QIv"/>
+                            <constraint firstItem="3k8-g8-Mf5" firstAttribute="top" secondItem="gdf-MH-p9c" secondAttribute="bottom" constant="22" id="otY-bo-mgX"/>
+                            <constraint firstItem="Zip-JG-snZ" firstAttribute="bottom" secondItem="JNs-4k-0p9" secondAttribute="bottom" constant="10" id="p1i-ZE-ebx"/>
                             <constraint firstItem="Yzx-Sa-ASz" firstAttribute="top" secondItem="m6h-ev-FFQ" secondAttribute="bottom" constant="30" id="pvu-m2-cyQ"/>
+                            <constraint firstItem="gdf-MH-p9c" firstAttribute="leading" secondItem="3k8-g8-Mf5" secondAttribute="leading" id="rHN-qt-Kgx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zip-JG-snZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="gr1-NG-Qbe"/>
                     <connections>
-                        <outlet property="counterLabel" destination="JNs-4k-0p9" id="pyx-Qa-Cq0"/>
+                        <outlet property="alphaCountLabel" destination="3k8-g8-Mf5" id="n2C-sH-dIE"/>
+                        <outlet property="numberCounterLabel" destination="kOm-6y-Yps" id="th8-ec-0Cz"/>
+                        <outlet property="stringCountLabel" destination="gdf-MH-p9c" id="Eis-Qc-d9E"/>
+                        <outlet property="symbolCounterLabel" destination="JNs-4k-0p9" id="pyx-Qa-Cq0"/>
                         <outlet property="testDataTextView" destination="Yzx-Sa-ASz" id="nae-gm-h5F"/>
                         <outlet property="titleTextField" destination="m6h-ev-FFQ" id="1Q3-4F-XZb"/>
                     </connections>
