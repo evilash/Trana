@@ -9,14 +9,18 @@
 import Foundation
 
 struct TestDataManager {
-    private let jsonFileManager = JSONFileManager()
+    fileprivate let jsonFileManager = JSONFileManager()
     
-    var arrayCount: Int {
-        guard let testData = getTestData() else { return 0 }
+    var stringDataArray: [StringData] {
+        var strArray = [StringData]()
         
-        return testData.stringDataArray.count
+        if let testData = getTestData() {
+            strArray = testData.stringDataArray
+        }
+        
+        return strArray
     }
-    
+        
     //MARK: - Public functions
     func createNewTestDataSet() {
         let newStringDataArray = returnNewStringDataArray { (stringDataArray) in
@@ -31,31 +35,15 @@ struct TestDataManager {
         jsonFileManager.writeToFile(with: newStringDataArray)
     }
     
-    func getTitle(from index: Int) -> String {
-        let title = getStringData(from: index) { (stringData) in
-            let titleFromArray = stringData.title
-            let title = !titleFromArray.isEmpty ? titleFromArray : "Test Set \(stringData.id)"
-            return title
-        }
-        
-        return title
-    }
-    
-    func getTestString(from index: Int) -> String {
-        let testString = getStringData(from: index) { $0.testString }
-        
-        return testString
-    }
-    
     //MARK: - Private functions
-    private func getStringData(from index: Int, closure: (StringData) -> String) -> String {
+    fileprivate func getStringData(from index: Int, closure: (StringData) -> String) -> String {
         guard let testData = getTestData() else { return "" }
         let string = closure(testData.stringDataArray[index])
         
         return string
     }
     
-    private func returnNewStringDataArray(closure: ([StringData]) -> StringData) -> [StringData] {
+    fileprivate func returnNewStringDataArray(closure: ([StringData]) -> StringData) -> [StringData] {
         var stringDataArray = [StringData]()
 
         if var testData = getTestData() {
@@ -68,7 +56,7 @@ struct TestDataManager {
         return stringDataArray
     }
 
-    private func getTestData() -> TestData? {
+    fileprivate func getTestData() -> TestData? {
         guard let url = jsonFileManager.fileURL else { return nil }
         let decoder = JSONDecoder()
         
