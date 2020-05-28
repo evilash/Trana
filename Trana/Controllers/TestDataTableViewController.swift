@@ -29,12 +29,12 @@ class TestDataTableViewController: UIViewController {
 
 extension TestDataTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testDataManager.arrayCount
+        return testDataManager.stringDataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellID, for: indexPath)
-        cell.textLabel?.text = testDataManager.getTitle(from: indexPath.row)
+        cell.textLabel?.text = testDataManager.stringDataArray[indexPath.row].title
         
         return cell
     }
@@ -50,8 +50,8 @@ extension TestDataTableViewController: UITableViewDelegate {
         if let selectedRow = selectedRow {
             let destination = segue.destination as! TestDataViewController
             
-            destination.titleString = testDataManager.getTitle(from: selectedRow)
-            destination.testString = testDataManager.getTestString(from: selectedRow)
+            destination.titleString = testDataManager.stringDataArray[selectedRow].title
+            destination.testString = testDataManager.stringDataArray[selectedRow].testString
             
             self.selectedRow = nil
         }
