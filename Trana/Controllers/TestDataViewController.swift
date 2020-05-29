@@ -22,6 +22,8 @@ class TestDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        postNotification()
+        
         view.backgroundColor = .randomBackgroundColor
         
         testDataTextView.delegate = self
@@ -44,6 +46,10 @@ extension TestDataViewController: UITextViewDelegate {
 }
 
 extension TestDataViewController {
+    fileprivate func postNotification() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
     fileprivate func displayStringCounts(from str: String) {
         stringCountLabel.text = "string count: \(str.count)"
         alphaCountLabel.text = "alpha count: \(str.alphaCount)"
