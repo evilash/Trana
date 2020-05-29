@@ -37,8 +37,6 @@ struct TestDataManager {
         jsonFileManager.writeToFile(with: newStringDataArray)
     }
     
-    //TODO: - I need to finish this off by writting the new array to the json file
-    // That works starts after I refactor the closure to return a generic
     func deleteData(from index: Int) {
         let newStringDataArray = returnNewStringDataArray { (stringArray) in
             stringArray.remove(at: index)
@@ -56,8 +54,6 @@ struct TestDataManager {
         return string
     }
     
-    //TODO: - I'm going to need to pull out the the appending of the array.
-    // I'm also going to need the closure to return to a generic
     fileprivate func returnNewStringDataArray(closure: (inout [StringData]) -> [StringData]) -> [StringData] {
         var stringDataArray = [StringData]()
 
