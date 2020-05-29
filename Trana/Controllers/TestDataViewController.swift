@@ -18,6 +18,7 @@ class TestDataViewController: UIViewController {
     
     var titleString = ""
     var testString = ""
+    var id = 0
             
     override func viewDidLoad() {
         super.viewDidLoad()

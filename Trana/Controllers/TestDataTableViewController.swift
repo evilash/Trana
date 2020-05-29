@@ -59,14 +59,18 @@ extension TestDataTableViewController: UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! TestDataViewController
+        
         if let selectedRow = selectedRow {
-            let destination = segue.destination as! TestDataViewController
             let title = testDataManager.stringDataArray[selectedRow].title
             
             destination.titleString = !title.isEmpty ? title : "Test Set: \(selectedRow)"
             destination.testString = testDataManager.stringDataArray[selectedRow].testString
+            destination.id = testDataManager.stringDataArray[selectedRow].id
             
             self.selectedRow = nil
+        } else {
+            destination.id = testDataManager.stringDataArray.count
         }
     }
 }
