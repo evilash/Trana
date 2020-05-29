@@ -72,11 +72,11 @@ extension TestDataTableViewController: UITableViewDelegate {
 }
 
 extension TestDataTableViewController {
-    func tableReload() {
+    fileprivate func tableReload() {
         NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-    @objc func loadList(notification: NSNotification){
+    @objc fileprivate func loadList(notification: NSNotification){
         testDataTableView.reloadData()
     }
 }
