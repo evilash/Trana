@@ -46,11 +46,26 @@ extension TestDataTableViewController: UITableViewDelegate {
         performSegue(withIdentifier: "ListToData", sender: self)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            testDataManager.deleteData(from: indexPath.row)
+            
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let selectedRow = selectedRow {
             let destination = segue.destination as! TestDataViewController
+            let title = testDataManager.stringDataArray[selectedRow].title
             
-            destination.titleString = testDataManager.stringDataArray[selectedRow].title
+            destination.titleString = !title.isEmpty ? title : "Test Set: \(selectedRow)"
             destination.testString = testDataManager.stringDataArray[selectedRow].testString
             
             self.selectedRow = nil
