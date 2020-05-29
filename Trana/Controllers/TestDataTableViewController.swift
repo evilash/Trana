@@ -17,6 +17,8 @@ class TestDataTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableReload()
+        
         testDataTableView.dataSource = self
         testDataTableView.delegate = self
     }
@@ -66,5 +68,15 @@ extension TestDataTableViewController: UITableViewDelegate {
             
             self.selectedRow = nil
         }
+    }
+}
+
+extension TestDataTableViewController {
+    func tableReload() {
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
+    @objc func loadList(notification: NSNotification){
+        testDataTableView.reloadData()
     }
 }
