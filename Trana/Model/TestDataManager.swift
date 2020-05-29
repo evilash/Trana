@@ -29,9 +29,22 @@ struct TestDataManager {
             let rgbValues = RGBValues(r: 1.1, g: 2.2, b: 3.3)
             let stringData = StringData(id: id, title: "test", testString: "testing", color: [rgbValues])
             
-            return stringData
+            stringDataArray.append(stringData)
+            
+            return stringDataArray
         }
 
+        jsonFileManager.writeToFile(with: newStringDataArray)
+    }
+    
+    //TODO: - I need to finish this off by writting the new array to the json file
+    // That works starts after I refactor the closure to return a generic
+    func deleteData(from index: Int) {
+        let newStringDataArray = returnNewStringDataArray { (stringArray) in
+            stringArray.remove(at: index)
+            return stringArray
+        }
+        
         jsonFileManager.writeToFile(with: newStringDataArray)
     }
     
@@ -43,14 +56,13 @@ struct TestDataManager {
         return string
     }
     
-    fileprivate func returnNewStringDataArray(closure: ([StringData]) -> StringData) -> [StringData] {
+    //TODO: - I'm going to need to pull out the the appending of the array.
+    // I'm also going to need the closure to return to a generic
+    fileprivate func returnNewStringDataArray(closure: (inout [StringData]) -> [StringData]) -> [StringData] {
         var stringDataArray = [StringData]()
 
         if var testData = getTestData() {
-            let stringData = closure(testData.stringDataArray)
-            testData.stringDataArray.append(stringData)
-            
-            stringDataArray = testData.stringDataArray
+            stringDataArray = closure(&testData.stringDataArray)
         }
         
         return stringDataArray
