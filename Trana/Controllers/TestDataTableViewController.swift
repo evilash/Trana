@@ -70,7 +70,7 @@ extension TestDataTableViewController: UITableViewDelegate {
             
             self.selectedRow = nil
         } else {
-            destination.id = testDataManager.stringDataArray.count
+            destination.id = testDataManager.stringDataArray.count - 1
         }
     }
 }
