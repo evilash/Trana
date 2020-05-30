@@ -39,7 +39,7 @@ class TestDataViewController: UIViewController {
     
     fileprivate func writeString(_ string: String) {
         guard let index = testDataManager.stringDataArray.firstIndex(where: {$0.id == id}) else { return }
-        testDataManager.writeData(to: index, with: string)
+        testDataManager.writeTestString(to: index, with: string)
     }
     
     fileprivate func postNotification() {

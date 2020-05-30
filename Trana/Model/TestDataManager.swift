@@ -37,7 +37,7 @@ struct TestDataManager {
         jsonFileManager.writeToFile(with: newStringDataArray)
     }
     
-    func writeData(to index: Int, with text: String) {
+    func writeTestString(to index: Int, with text: String) {
         let newStringDataArray = returnNewStringDataArray { (stringDataArray) -> [StringData] in
             stringDataArray[index].testString = text
             
