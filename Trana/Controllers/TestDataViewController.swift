@@ -29,6 +29,7 @@ class TestDataViewController: UIViewController {
         
         view.backgroundColor = .randomBackgroundColor
         
+        titleTextField.delegate = self
         testDataTextView.delegate = self
         
         titleTextField.text = titleString
@@ -53,6 +54,14 @@ class TestDataViewController: UIViewController {
         symbolCounterLabel.text = "symbol count: \(str.specialCharacterCount)"
     }
 
+}
+
+extension TestDataViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
 }
 
 extension TestDataViewController: UITextViewDelegate {
