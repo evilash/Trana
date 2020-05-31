@@ -31,6 +31,7 @@ class TestDataViewController: UIViewController {
         
         titleTextField.delegate = self
         testDataTextView.delegate = self
+        navigationController?.delegate = self
         
         titleTextField.text = titleString
         testDataTextView.text = testString
@@ -89,5 +90,16 @@ extension TestDataViewController: UITextViewDelegate {
         textView.spellCheckingType = .no
         
         return true
+    }
+}
+
+extension TestDataViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if viewController.isKind(of: TestDataTableViewController.self) {
+            let viewController = viewController as! TestDataTableViewController
+            
+            testDataManager.writeTitle(to: id, with: titleTextField.text!)
+            viewController.testDataTableView.reloadData()
+        }
     }
 }
