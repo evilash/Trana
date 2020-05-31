@@ -54,6 +54,9 @@ class TestDataViewController: UIViewController {
         symbolCounterLabel.text = "symbol count: \(str.specialCharacterCount)"
     }
 
+    @objc func doneTapped() {
+        testDataTextView.resignFirstResponder()
+    }
 }
 
 extension TestDataViewController: UITextFieldDelegate {
@@ -72,5 +75,19 @@ extension TestDataViewController: UITextViewDelegate {
         } else {
             stringCountLabel.text = "Cannot get data. Please try again later"
         }
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        let bar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped))
+        
+        bar.items = [done]
+        bar.sizeToFit()
+        textView.inputAccessoryView = bar
+        
+        textView.autocorrectionType = .no
+        textView.spellCheckingType = .no
+        
+        return true
     }
 }
