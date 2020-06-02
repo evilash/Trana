@@ -79,8 +79,8 @@ struct TestDataManager {
     fileprivate func updateIds(for array: [StringData]) -> [StringData] {
         var strArray = array
         
-        for index in 0..<strArray.count {
-            if strArray[index].id != index { strArray[index].id = index }
+        for index in 0..<strArray.count where strArray[index].id != index {
+            strArray[index].id = index
         }
 
         return strArray
