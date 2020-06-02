@@ -17,7 +17,7 @@ struct TestData: Codable {
 }
 
 struct StringData: Codable {
-    let id: Int
+    var id: Int
     var title: String
     var testString: String
     let color: [RGBValues]

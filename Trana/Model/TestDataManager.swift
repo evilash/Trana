@@ -24,8 +24,8 @@ struct TestDataManager {
     //MARK: - Public functions
     func createNewTestDataSet() {
         let newStringDataArray = returnNewStringDataArray { (stringDataArray) in
-            let lastID = stringDataArray.last?.id ?? 1
-            let id = stringDataArray.count != 0 ? lastID + 1 : 1
+            let lastID = stringDataArray.last?.id ?? 0
+            let id = stringDataArray.count != 0 ? lastID + 1 : 0
             let rgbValues = RGBValues(r: 1.1, g: 2.2, b: 3.3)
             let stringData = StringData(id: id, title: "test set \(id)", testString: "testing", color: [rgbValues])
             
@@ -60,7 +60,9 @@ struct TestDataManager {
     func deleteData(from index: Int) {
         let newStringDataArray = returnNewStringDataArray { (stringArray) in
             stringArray.remove(at: index)
-            return stringArray
+            let updatedArrayWithIds = updateIds(for: stringArray)
+
+            return updatedArrayWithIds
         }
         
         jsonFileManager.writeToFile(with: newStringDataArray)
@@ -72,6 +74,16 @@ struct TestDataManager {
         let string = closure(testData.stringDataArray[index])
         
         return string
+    }
+    
+    fileprivate func updateIds(for array: [StringData]) -> [StringData] {
+        var strArray = array
+        
+        for index in 0..<strArray.count {
+            if strArray[index].id != index { strArray[index].id = index }
+        }
+
+        return strArray
     }
     
     fileprivate func returnNewStringDataArray(closure: (inout [StringData]) -> [StringData]) -> [StringData] {
