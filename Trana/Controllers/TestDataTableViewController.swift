@@ -71,6 +71,7 @@ extension TestDataTableViewController: UITableViewDelegate {
             self.selectedRow = nil
         } else {
             destination.id = testDataManager.stringDataArray.count - 1
+            destination.titleString = "Test Set \(destination.id)"
         }
     }
 }
