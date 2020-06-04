@@ -21,7 +21,7 @@ class TestDataViewController: UIViewController {
     var titleString = ""
     var testString = ""
     var id = 0
-            
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +39,12 @@ class TestDataViewController: UIViewController {
         displayStringCounts(for: testString)
     }
     
+    @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
+        displayShareSheet()
+    }
+}
+
+extension TestDataViewController {
     fileprivate func writeString(_ string: String) {
         guard let index = testDataManager.stringDataArray.firstIndex(where: {$0.id == id}) else { return }
         testDataManager.writeTestString(to: index, with: string)
@@ -54,9 +60,18 @@ class TestDataViewController: UIViewController {
         numberCounterLabel.text = "number count: \(str.numericCount)"
         symbolCounterLabel.text = "symbol count: \(str.specialCharacterCount)"
     }
-
+    
     @objc func doneTapped() {
         testDataTextView.resignFirstResponder()
+    }
+    
+    func displayShareSheet() {
+        let infoToBeShared = [self]
+        let activityViewController = UIActivityViewController(activityItems: infoToBeShared, applicationActivities: nil)
+        
+        activityViewController.excludedActivityTypes = [.addToReadingList, .assignToContact, .message, .openInIBooks, .postToFacebook, .postToFlickr, .postToVimeo, .postToWeibo, .postToTencentWeibo, .postToTwitter, .postToWeibo, .print, .saveToCameraRoll]
+        
+        present(activityViewController, animated: true, completion: nil)
     }
 }
 
@@ -101,5 +116,32 @@ extension TestDataViewController: UINavigationControllerDelegate {
             testDataManager.writeTitle(to: id, with: titleTextField.text!)
             viewController.testDataTableView.reloadData()
         }
+    }
+}
+
+extension TestDataViewController: UIActivityItemSource {
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        return "Just needed something here"
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        let stringCounts = """
+            test string: \(testDataTextView.text!)
+            
+            \(stringCountLabel.text!)
+            
+            \(alphaCountLabel.text!)
+            
+            \(numberCounterLabel.text!)
+            
+            \(symbolCounterLabel.text!)
+            """
+        
+        return stringCounts
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+
+        return titleTextField.text!
     }
 }

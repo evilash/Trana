@@ -124,7 +124,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zip-JG-snZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gr1-NG-Qbe"/>
+                    <navigationItem key="navigationItem" id="gr1-NG-Qbe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="gcP-Vb-ycx">
+                            <connections>
+                                <action selector="shareButtonTapped:" destination="aer-C1-dRg" id="zZF-qk-7bw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="alphaCountLabel" destination="3k8-g8-Mf5" id="n2C-sH-dIE"/>
                         <outlet property="numberCounterLabel" destination="kOm-6y-Yps" id="th8-ec-0Cz"/>
