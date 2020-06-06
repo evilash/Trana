@@ -8,14 +8,22 @@
 
 import Foundation
 
+enum JsonError: Error {
+    case cantFindFile
+    case cantDecodeFile
+}
+
 struct TestDataManager {
     fileprivate let jsonFileManager = JSONFileManager()
     
     var stringDataArray: [StringData] {
         var strArray = [StringData]()
         
-        if let testData = getTestData() {
+        do {
+            let testData = try getTestData()
             strArray = testData.stringDataArray
+        } catch {
+            print(error.localizedDescription)
         }
         
         return strArray
@@ -69,13 +77,6 @@ struct TestDataManager {
     }
     
     //MARK: - Private functions
-    fileprivate func getStringData(from index: Int, closure: (StringData) -> String) -> String {
-        guard let testData = getTestData() else { return "" }
-        let string = closure(testData.stringDataArray[index])
-        
-        return string
-    }
-    
     fileprivate func updateIds(for array: [StringData]) -> [StringData] {
         var strArray = array
         
@@ -89,15 +90,18 @@ struct TestDataManager {
     fileprivate func returnNewStringDataArray(closure: (inout [StringData]) -> [StringData]) -> [StringData] {
         var stringDataArray = [StringData]()
 
-        if var testData = getTestData() {
+        do {
+            var testData = try getTestData()
             stringDataArray = closure(&testData.stringDataArray)
+        } catch {
+            print(error.localizedDescription)
         }
-        
+            
         return stringDataArray
     }
 
-    fileprivate func getTestData() -> TestData? {
-        guard let url = jsonFileManager.fileURL else { return nil }
+    fileprivate func getTestData() throws -> TestData {
+        guard let url = jsonFileManager.fileURL else { throw JsonError.cantFindFile }
         let decoder = JSONDecoder()
         
         do {
@@ -106,8 +110,18 @@ struct TestDataManager {
 
             return testData
         } catch {
-            print(error)
-            return nil
+            throw JsonError.cantDecodeFile
+        }
+    }
+}
+
+extension JsonError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .cantDecodeFile:
+            return NSLocalizedString("The file cannot be decoded", comment: "")
+        case .cantFindFile:
+            return NSLocalizedString("The file cannot be found", comment: "")
         }
     }
 }
