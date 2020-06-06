@@ -35,7 +35,7 @@ struct TestDataManager {
             let lastID = stringDataArray.last?.id ?? 0
             let id = stringDataArray.count != 0 ? lastID + 1 : 0
             let rgbValues = RGBValues(r: 1.1, g: 2.2, b: 3.3)
-            let stringData = StringData(id: id, title: "test set \(id)", testString: "testing", color: [rgbValues])
+            let stringData = StringData(id: id, title: "Test Set \(id)", testString: "", color: [rgbValues])
             
             stringDataArray.append(stringData)
             
