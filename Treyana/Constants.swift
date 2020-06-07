@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  Trana
+//  Treyana
 //
 //  Created by Matt M Smith on 5/7/20.
 //  Copyright © 2020 Matt. All rights reserved.
@@ -22,6 +22,6 @@ struct Constants {
     }
     
     struct File {
-        static let name = "TranaTestData.json"
+        static let name = "TreyanaTestData.json"
     }
 }
