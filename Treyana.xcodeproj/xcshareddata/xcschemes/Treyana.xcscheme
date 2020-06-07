@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C9D65F5C2463A69E001BAEFF"
-               BuildableName = "Trana.app"
-               BlueprintName = "Trana"
-               ReferencedContainer = "container:Trana.xcodeproj">
+               BuildableName = "Treyana.app"
+               BlueprintName = "Treyana"
+               ReferencedContainer = "container:Treyana.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C9D65F5C2463A69E001BAEFF"
-            BuildableName = "Trana.app"
-            BlueprintName = "Trana"
-            ReferencedContainer = "container:Trana.xcodeproj">
+            BuildableName = "Treyana.app"
+            BlueprintName = "Treyana"
+            ReferencedContainer = "container:Treyana.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C9D65F5C2463A69E001BAEFF"
-            BuildableName = "Trana.app"
-            BlueprintName = "Trana"
-            ReferencedContainer = "container:Trana.xcodeproj">
+            BuildableName = "Treyana.app"
+            BlueprintName = "Treyana"
+            ReferencedContainer = "container:Treyana.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
