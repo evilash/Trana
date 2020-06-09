@@ -54,11 +54,11 @@ extension TestDataViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-    fileprivate func displayStringCounts(for str: String) {
-        stringCountLabel.text = "string count: \(str.count)"
-        alphaCountLabel.text = "alpha count: \(str.alphaCount)"
-        numberCounterLabel.text = "number count: \(str.numericCount)"
-        symbolCounterLabel.text = "symbol count: \(str.specialCharacterCount)"
+    fileprivate func displayStringCounts(for string: String) {
+        stringCountLabel.text = "string count: \(string.count)"
+        alphaCountLabel.text = "alpha count: \(string.alphaCount)"
+        numberCounterLabel.text = "number count: \(string.numericCount)"
+        symbolCounterLabel.text = "symbol count: \(string.specialCharacterCount)"
     }
     
     @objc func doneTapped() {
