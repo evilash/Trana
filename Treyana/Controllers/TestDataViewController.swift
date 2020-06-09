@@ -44,6 +44,7 @@ class TestDataViewController: UIViewController {
     }
 }
 
+// MARK: - TestDataViewController extension
 extension TestDataViewController {
     fileprivate func writeString(_ string: String) {
         guard let index = testDataManager.stringDataArray.firstIndex(where: {$0.id == id}) else { return }
@@ -75,6 +76,7 @@ extension TestDataViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate extension
 extension TestDataViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -83,6 +85,7 @@ extension TestDataViewController: UITextFieldDelegate {
     }
 }
 
+//MARK: - UITextViewDelegate extension
 extension TestDataViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if let text = textView.text {
@@ -108,6 +111,7 @@ extension TestDataViewController: UITextViewDelegate {
     }
 }
 
+//MARK: - UINavigationControllerDelegate extension
 extension TestDataViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if viewController.isKind(of: TestDataTableViewController.self) {
@@ -119,6 +123,7 @@ extension TestDataViewController: UINavigationControllerDelegate {
     }
 }
 
+//MARK: - UIActivityItemSource extension
 extension TestDataViewController: UIActivityItemSource {
     func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
         return "Just needed something here"
