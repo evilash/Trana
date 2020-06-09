@@ -36,7 +36,7 @@ class TestDataViewController: UIViewController {
         titleTextField.text = titleString
         testDataTextView.text = testString
         
-        displayStringCounts(for: testString)
+        displayCounts(for: testString)
     }
     
     @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
@@ -55,7 +55,7 @@ extension TestDataViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-    fileprivate func displayStringCounts(for string: String) {
+    fileprivate func displayCounts(for string: String) {
         stringCountLabel.text = "string count: \(string.count)"
         alphaCountLabel.text = "alpha count: \(string.alphaCount)"
         numberCounterLabel.text = "number count: \(string.numericCount)"
@@ -90,7 +90,7 @@ extension TestDataViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if let text = textView.text {
             writeString(text)
-            displayStringCounts(for: text)
+            displayCounts(for: text)
         } else {
             stringCountLabel.text = "Cannot get data. Please try again later"
         }
