@@ -29,8 +29,18 @@ class TestDataTableViewController: UIViewController {
     }
 }
 
+//MARK: - TestDataTableViewController extension
+extension TestDataTableViewController {
+    fileprivate func tableReload() {
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
+    @objc fileprivate func loadList(notification: NSNotification){
+        testDataTableView.reloadData()
+    }
+}
 
-
+//MARK: - UITableViewDataSource extension
 extension TestDataTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return testDataManager.stringDataArray.count
@@ -44,6 +54,7 @@ extension TestDataTableViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - UITableViewDelegate extension
 extension TestDataTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRow = indexPath.row
@@ -75,15 +86,5 @@ extension TestDataTableViewController: UITableViewDelegate {
             destination.id = testDataManager.stringDataArray.count - 1
             destination.titleString = "Test Set \(destination.id)"
         }
-    }
-}
-
-extension TestDataTableViewController {
-    fileprivate func tableReload() {
-        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
-    }
-    
-    @objc fileprivate func loadList(notification: NSNotification){
-        testDataTableView.reloadData()
     }
 }
