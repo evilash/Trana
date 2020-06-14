@@ -27,8 +27,6 @@ class TestDataViewController: UIViewController {
         
         postNotification()
         
-        view.backgroundColor = .randomBackgroundColor
-        
         titleTextField.delegate = self
         testDataTextView.delegate = self
         navigationController?.delegate = self
