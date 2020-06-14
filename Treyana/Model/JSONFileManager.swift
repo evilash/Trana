@@ -26,8 +26,7 @@ struct JSONFileManager {
         
         if FileManager.default.contents(atPath: url.relativePath) == nil {
             let message = "Thank you for using Treyana. The true power of Treyana comes from allowing iCloud to share your test data between devices."
-            let rgbValues = RGBValues(r: 0.0, g: 0.0, b: 0.0)
-            let stringData = StringData(id: 0, title: "Treyana", testString: message, color: [rgbValues])
+            let stringData = StringData(id: 0, title: "Treyana", testString: message)
             
             writeToFile(with: [stringData])
         }

@@ -20,11 +20,4 @@ struct StringData: Codable {
     var id: Int
     var title: String
     var testString: String
-    let color: [RGBValues]
-}
-
-struct RGBValues: Codable {
-    let r: Double
-    let g: Double
-    let b: Double
 }
