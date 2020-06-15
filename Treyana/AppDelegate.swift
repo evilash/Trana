@@ -13,8 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         DispatchQueue.global(qos: .background).async {
-            let jsonFileManager = JSONFileManager()
-            jsonFileManager.createNewJSONFile()
+            JSONFileManager.createNewJSONFile()
         }
         
         return true

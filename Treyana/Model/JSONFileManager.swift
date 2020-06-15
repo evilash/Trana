@@ -9,7 +9,7 @@
 import Foundation
 
 struct JSONFileManager {
-    let fileURL: URL? = {
+    static let fileURL: URL? = {
         do {
             let url = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(Constants.File.name)
             print(url)
@@ -21,7 +21,7 @@ struct JSONFileManager {
         }
     }()
     
-    func createNewJSONFile() {
+    static func createNewJSONFile() {
         guard let url = fileURL else { return }
         
         if FileManager.default.contents(atPath: url.relativePath) == nil {
@@ -32,7 +32,7 @@ struct JSONFileManager {
         }
     }
     
-    func writeToFile(with stringDataArray: [StringData]) {
+    static func writeToFile(with stringDataArray: [StringData]) {
         guard let url = fileURL else { return }
         let testData = TestData(stringDataArray: stringDataArray)
         let encoder = JSONEncoder()

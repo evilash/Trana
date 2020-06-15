@@ -14,8 +14,6 @@ enum JsonError: Error {
 }
 
 struct TestDataManager {
-    fileprivate let jsonFileManager = JSONFileManager()
-    
     var stringDataArray: [StringData] {
         var strArray = [StringData]()
         
@@ -41,7 +39,7 @@ struct TestDataManager {
             return stringDataArray
         }
 
-        jsonFileManager.writeToFile(with: newStringDataArray)
+        JSONFileManager.writeToFile(with: newStringDataArray)
     }
     
     func writeTitle(to index: Int, with text: String) {
@@ -51,7 +49,7 @@ struct TestDataManager {
             return stringDataArray
         }
         
-        jsonFileManager.writeToFile(with: newStringDataArray)
+        JSONFileManager.writeToFile(with: newStringDataArray)
     }
     
     func writeTestString(to index: Int, with text: String) {
@@ -61,7 +59,7 @@ struct TestDataManager {
             return stringDataArray
         }
         
-        jsonFileManager.writeToFile(with: newStringDataArray)
+        JSONFileManager.writeToFile(with: newStringDataArray)
     }
     
     func deleteData(from index: Int) {
@@ -72,7 +70,7 @@ struct TestDataManager {
             return updatedArrayWithIds
         }
         
-        jsonFileManager.writeToFile(with: newStringDataArray)
+        JSONFileManager.writeToFile(with: newStringDataArray)
     }
     
     //MARK: - Private functions
@@ -100,7 +98,7 @@ struct TestDataManager {
     }
 
     fileprivate func getTestData() throws -> TestData {
-        guard let url = jsonFileManager.fileURL else { throw JsonError.cantFindFile }
+        guard let url = JSONFileManager.fileURL else { throw JsonError.cantFindFile }
         let decoder = JSONDecoder()
         
         do {
