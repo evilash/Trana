@@ -14,8 +14,6 @@ enum JsonError: Error {
 }
 
 struct TestDataManager {
-    fileprivate let jsonFileManager = JSONFileManager()
-    
     var stringDataArray: [StringData] {
         var strArray = [StringData]()
         
@@ -41,7 +39,7 @@ struct TestDataManager {
             return stringDataArray
         }
 
-        jsonFileManager.writeToFile(with: newStringDataArray)
+        JSONFileManager.writeToFile(with: newStringDataArray)
     }
     
     func writeTitle(to index: Int, with text: String) {
@@ -51,7 +49,7 @@ struct TestDataManager {
             return stringDataArray
         }
         
-        jsonFileManager.writeToFile(with: newStringDataArray)
+        JSONFileManager.writeToFile(with: newStringDataArray)
     }
     
     func writeTestString(to index: Int, with text: String) {
@@ -61,7 +59,7 @@ struct TestDataManager {
             return stringDataArray
         }
         
-        jsonFileManager.writeToFile(with: newStringDataArray)
+        JSONFileManager.writeToFile(with: newStringDataArray)
     }
     
     func deleteData(from index: Int) {
@@ -72,11 +70,11 @@ struct TestDataManager {
             return updatedArrayWithIds
         }
         
-        jsonFileManager.writeToFile(with: newStringDataArray)
+        JSONFileManager.writeToFile(with: newStringDataArray)
     }
     
     //MARK: - Private functions
-    fileprivate func updateIds(for array: [StringData]) -> [StringData] {
+    private func updateIds(for array: [StringData]) -> [StringData] {
         var strArray = array
         
         for index in 0..<strArray.count where strArray[index].id != index {
@@ -86,7 +84,7 @@ struct TestDataManager {
         return strArray
     }
     
-    fileprivate func returnNewStringDataArray(closure: (inout [StringData]) -> [StringData]) -> [StringData] {
+    private func returnNewStringDataArray(closure: (inout [StringData]) -> [StringData]) -> [StringData] {
         var stringDataArray = [StringData]()
 
         do {
@@ -99,8 +97,8 @@ struct TestDataManager {
         return stringDataArray
     }
 
-    fileprivate func getTestData() throws -> TestData {
-        guard let url = jsonFileManager.fileURL else { throw JsonError.cantFindFile }
+    private func getTestData() throws -> TestData {
+        guard let url = JSONFileManager.fileURL else { throw JsonError.cantFindFile }
         let decoder = JSONDecoder()
         
         do {

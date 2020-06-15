@@ -95,12 +95,12 @@ extension TestDataViewController: UITextViewDelegate {
     }
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        let bar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped))
         
-        bar.items = [done]
-        bar.sizeToFit()
-        textView.inputAccessoryView = bar
+        toolbar.items = [done]
+        toolbar.sizeToFit()
+        textView.inputAccessoryView = toolbar
         
         textView.autocorrectionType = .no
         textView.spellCheckingType = .no

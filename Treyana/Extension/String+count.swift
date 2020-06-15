@@ -10,22 +10,22 @@ import Foundation
 
 extension String {
     var alphaCount: Int {
-        let str = self.filter { $0.isLetter }
+        let alpha = self.filter { $0.isLetter }
         
-        return str.count
+        return alpha.count
     }
     
     var numericCount: Int {
-        let str = self.filter { $0.isNumber }
+        let numericString = self.filter { $0.isNumber }
         
-        return str.count
+        return numericString.count
     }
     
     var specialCharacterCount: Int {
-        var str = self.filter { $0.isPunctuation }
+        var specialCharacters = self.filter { $0.isPunctuation }
         let symbol = self.filter { $0.isSymbol }
-        str.append(symbol)
+        specialCharacters.append(symbol)
         
-        return str.count
+        return specialCharacters.count
     }
 }

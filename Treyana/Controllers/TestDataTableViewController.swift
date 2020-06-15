@@ -12,7 +12,7 @@ class TestDataTableViewController: UIViewController {
     @IBOutlet weak var testDataTableView: UITableView!
     
     let testDataManager = TestDataManager()
-    var selectedRow: Int!
+    var selectedRow: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
