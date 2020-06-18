@@ -25,7 +25,7 @@ struct TestDataManager {
         let newStringDataArray = returnNewStringDataArray { (stringDataArray) in
             let lastID = stringDataArray.last?.id ?? 0
             let id = stringDataArray.count != 0 ? lastID + 1 : 0
-            let stringData = StringData(id: id, title: "Test Set \(id)", testString: "")
+            let stringData = StringData(id: id, title: Constants.TestSet.title + " \(id)", testString: "")
             
             stringDataArray.append(stringData)
             

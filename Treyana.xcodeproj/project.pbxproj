@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C919E96A247E265400517288 /* String+count.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919E969247E265400517288 /* String+count.swift */; };
+		C929F649248F517E00E6FEAD /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C929F648248F517E00E6FEAD /* CloudKit.framework */; };
 		C9317A28246E82C8009D3E39 /* JSONFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9317A27246E82C8009D3E39 /* JSONFileManager.swift */; };
 		C986C5F425665C1300003A83 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986C5F325665C1300003A83 /* Alert.swift */; };
 		C986C5F625665D5000003A83 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986C5F525665D5000003A83 /* AlertError.swift */; };
@@ -25,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		C919E969247E265400517288 /* String+count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+count.swift"; sourceTree = "<group>"; };
+		C929F646248F517C00E6FEAD /* Treyana.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Treyana.entitlements; sourceTree = "<group>"; };
+		C929F648248F517E00E6FEAD /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C9317A27246E82C8009D3E39 /* JSONFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileManager.swift; sourceTree = "<group>"; };
 		C986C5F325665C1300003A83 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C986C5F525665D5000003A83 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C929F649248F517E00E6FEAD /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 			children = (
 				C9D65F5F2463A69E001BAEFF /* Treyana */,
 				C9D65F5E2463A69E001BAEFF /* Products */,
+				C929F647248F517E00E6FEAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,6 +226,7 @@
 				C986C5F425665C1300003A83 /* Alert.swift in Sources */,
 				C986C5F625665D5000003A83 /* AlertError.swift in Sources */,
 				C9FCEEDA24652AFA001957B8 /* Constants.swift in Sources */,
+				C9A1E0F0248F5BF40090AA95 /* CloudService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Treyana/Treyana.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HBV336R3WK;
 				INFOPLIST_FILE = Treyana/Info.plist;
@@ -382,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Treyana/Treyana.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HBV336R3WK;
 				INFOPLIST_FILE = Treyana/Info.plist;

@@ -25,14 +25,14 @@ class TestDataTableViewController: UIViewController {
     
     @IBAction func pressedAddData(_ sender: UIBarButtonItem) {
         testDataManager.createNewTestDataSet()
-        performSegue(withIdentifier: "ListToData", sender: self)
+        performSegue(withIdentifier: Constants.SegueIdentifier.listToData, sender: self)
     }
 }
 
 //MARK: - TestDataTableViewController extension
 extension TestDataTableViewController {
     fileprivate func tableReload() {
-        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: Constants.Notification.name), object: nil)
     }
     
     @objc fileprivate func loadList(notification: NSNotification){
@@ -68,7 +68,7 @@ extension TestDataTableViewController: UITableViewDataSource {
 extension TestDataTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRow = indexPath.row
-        performSegue(withIdentifier: "ListToData", sender: self)
+        performSegue(withIdentifier: Constants.SegueIdentifier.listToData, sender: self)
     }
         
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

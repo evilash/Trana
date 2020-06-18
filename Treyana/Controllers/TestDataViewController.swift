@@ -50,7 +50,7 @@ extension TestDataViewController {
     }
     
     fileprivate func postNotification() {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.Notification.name), object: nil)
     }
     
     fileprivate func displayCounts(for string: String) {
