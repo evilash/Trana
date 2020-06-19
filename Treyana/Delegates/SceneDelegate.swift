@@ -33,8 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
+        if let url = JSONFileManager.fileURL {
+            CloudService.saveToCloud(url: url)
+        }
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {

@@ -10,7 +10,7 @@ import Foundation
 import CloudKit
 
 struct CloudService {
-    func saveToCloud(url: URL) {
+    static func saveToCloud(url: URL) {
         let record = CKRecord(recordType: Constants.Cloud.recordType)
         let container = CKContainer.default()
         let database = container.privateCloudDatabase

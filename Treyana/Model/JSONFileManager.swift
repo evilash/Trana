@@ -32,7 +32,6 @@ struct JSONFileManager {
         
         do {
             try encoder.encode(testData).write(to: url)
-            cloudService.saveToCloud(url: url)
         } catch {
             print(error)
         }

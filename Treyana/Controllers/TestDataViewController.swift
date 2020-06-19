@@ -37,6 +37,22 @@ class TestDataViewController: UIViewController {
         displayCounts(for: testString)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        guard let url = JSONFileManager.fileURL else {
+            let alert = UIAlertController(title: "ERROR", message: "File could not be found!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            
+            present(alert, animated: true)
+            
+            return
+        }
+        
+        CloudService.saveToCloud(url: url)
+    }
+    
     @IBAction func shareButtonTapped(_ sender: UIBarButtonItem) {
         displayShareSheet()
     }
