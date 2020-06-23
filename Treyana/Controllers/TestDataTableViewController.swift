@@ -21,6 +21,7 @@ class TestDataTableViewController: UIViewController {
         
         testDataTableView.dataSource = self
         testDataTableView.delegate = self
+        CloudService.loadTestData()
     }
     
     @IBAction func pressedAddData(_ sender: UIBarButtonItem) {

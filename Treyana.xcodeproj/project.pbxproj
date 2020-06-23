@@ -19,6 +19,7 @@
 		C9D65F6D2463A69F001BAEFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D65F6B2463A69F001BAEFF /* LaunchScreen.storyboard */; };
 		C9D65F752463A8E8001BAEFF /* TestDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F742463A8E8001BAEFF /* TestDataViewController.swift */; };
 		C9D65F7B2463B93E001BAEFF /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F7A2463B93E001BAEFF /* TestData.swift */; };
+		C9D7ECCC24A0346C006336C1 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7ECCB24A0346C006336C1 /* Record.swift */; };
 		C9E29586246D01BB00901D7F /* TestDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E29585246D01BB00901D7F /* TestDataManager.swift */; };
 		C9EB236C24764E2900346C19 /* TestDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EB236B24764E2800346C19 /* TestDataTableViewController.swift */; };
 		C9FCEEDA24652AFA001957B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FCEED924652AF9001957B8 /* Constants.swift */; };
@@ -40,6 +41,7 @@
 		C9D65F6E2463A69F001BAEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9D65F742463A8E8001BAEFF /* TestDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataViewController.swift; sourceTree = "<group>"; };
 		C9D65F7A2463B93E001BAEFF /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		C9D7ECCB24A0346C006336C1 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		C9E29585246D01BB00901D7F /* TestDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataManager.swift; sourceTree = "<group>"; };
 		C9EB236B24764E2800346C19 /* TestDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataTableViewController.swift; sourceTree = "<group>"; };
 		C9FCEED924652AF9001957B8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		C9D65F7C2463B944001BAEFF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C9D7ECCB24A0346C006336C1 /* Record.swift */,
 				C9D65F7A2463B93E001BAEFF /* TestData.swift */,
 				C9E29585246D01BB00901D7F /* TestDataManager.swift */,
 				C9317A27246E82C8009D3E39 /* JSONFileManager.swift */,
@@ -226,6 +229,7 @@
 				C986C5F425665C1300003A83 /* Alert.swift in Sources */,
 				C986C5F625665D5000003A83 /* AlertError.swift in Sources */,
 				C9FCEEDA24652AFA001957B8 /* Constants.swift in Sources */,
+				C9D7ECCC24A0346C006336C1 /* Record.swift in Sources */,
 				C9A1E0F0248F5BF40090AA95 /* CloudService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
