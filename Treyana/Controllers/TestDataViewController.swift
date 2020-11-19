@@ -45,7 +45,7 @@ class TestDataViewController: UIViewController {
 // MARK: - TestDataViewController extension
 extension TestDataViewController {
     fileprivate func writeString(_ string: String) {
-        guard let index = testDataManager.stringDataArray.firstIndex(where: {$0.id == id}) else { return }
+        guard let index = testDataManager.stringDataArray?.firstIndex(where: {$0.id == id}) else { return }
         testDataManager.writeTestString(to: index, with: string)
     }
     

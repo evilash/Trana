@@ -9,6 +9,14 @@
 import Foundation
 
 struct Constants {
+    struct File {
+        static let name = "TreyanaTestData.json"
+    }
+    
+    struct Message {
+        static let firstTime = "Thank you for using Treyana. The true power of Treyana comes from allowing iCloud to share your test data between devices."
+    }
+    
     struct SegueIdentifier {
         static let listToData = "ListToData"
     }
@@ -19,9 +27,5 @@ struct Constants {
     
     struct TableView {
         static let cellID = "testDataCell"
-    }
-    
-    struct File {
-        static let name = "TreyanaTestData.json"
     }
 }

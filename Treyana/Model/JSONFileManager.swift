@@ -9,31 +9,24 @@
 import Foundation
 
 struct JSONFileManager {
-    static let fileURL: URL? = {
-        do {
-            let url = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(Constants.File.name)
-            print(url)
-            
-            return url
-        } catch {
-            print(error)
-            return nil
-        }
+    static let url: URL? = {
+        let url = try? FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(Constants.File.name)
+        
+        return url
     }()
     
     static func createNewJSONFile() {
-        guard let url = fileURL else { return }
+        guard let url = url else { return }
         
         if FileManager.default.contents(atPath: url.relativePath) == nil {
-            let message = "Thank you for using Treyana. The true power of Treyana comes from allowing iCloud to share your test data between devices."
-            let stringData = StringData(id: 0, title: "Treyana", testString: message)
+            let stringData = StringData(id: 0, title: "Treyana", testString: Constants.Message.firstTime)
             
             writeToFile(with: [stringData])
         }
     }
     
     static func writeToFile(with stringDataArray: [StringData]) {
-        guard let url = fileURL else { return }
+        guard let url = url else { return }
         let testData = TestData(stringDataArray: stringDataArray)
         let encoder = JSONEncoder()
         
