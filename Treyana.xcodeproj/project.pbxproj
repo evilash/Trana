@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C919E96A247E265400517288 /* String+count.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919E969247E265400517288 /* String+count.swift */; };
 		C9317A28246E82C8009D3E39 /* JSONFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9317A27246E82C8009D3E39 /* JSONFileManager.swift */; };
+		C986C5F425665C1300003A83 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986C5F325665C1300003A83 /* Alert.swift */; };
+		C986C5F625665D5000003A83 /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986C5F525665D5000003A83 /* AlertError.swift */; };
 		C9D65F612463A69E001BAEFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F602463A69E001BAEFF /* AppDelegate.swift */; };
 		C9D65F632463A69E001BAEFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D65F622463A69E001BAEFF /* SceneDelegate.swift */; };
 		C9D65F682463A69E001BAEFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D65F662463A69E001BAEFF /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		C919E969247E265400517288 /* String+count.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+count.swift"; sourceTree = "<group>"; };
 		C9317A27246E82C8009D3E39 /* JSONFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFileManager.swift; sourceTree = "<group>"; };
+		C986C5F325665C1300003A83 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C986C5F525665D5000003A83 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
 		C9D65F5D2463A69E001BAEFF /* Treyana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Treyana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9D65F602463A69E001BAEFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9D65F622463A69E001BAEFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,25 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		C986C5F12566590E00003A83 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C9FCEED924652AF9001957B8 /* Constants.swift */,
+				C986C5F325665C1300003A83 /* Alert.swift */,
+				C986C5F525665D5000003A83 /* AlertError.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		C986C5F2256659A600003A83 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C9D65F602463A69E001BAEFF /* AppDelegate.swift */,
+				C9D65F622463A69E001BAEFF /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		C9D65F542463A69D001BAEFF = {
 			isa = PBXGroup;
 			children = (
@@ -76,16 +99,15 @@
 		C9D65F5F2463A69E001BAEFF /* Treyana */ = {
 			isa = PBXGroup;
 			children = (
-				C9D65F602463A69E001BAEFF /* AppDelegate.swift */,
-				C9D65F622463A69E001BAEFF /* SceneDelegate.swift */,
+				C986C5F2256659A600003A83 /* Delegates */,
 				C9D65F7C2463B944001BAEFF /* Model */,
 				C9D65F762463A946001BAEFF /* Controllers */,
 				C919E96B247E265B00517288 /* Extension */,
 				C9D65F772463A950001BAEFF /* View */,
+				C986C5F12566590E00003A83 /* Lib */,
 				C9D65F692463A69F001BAEFF /* Assets.xcassets */,
 				C9D65F6B2463A69F001BAEFF /* LaunchScreen.storyboard */,
 				C9D65F6E2463A69F001BAEFF /* Info.plist */,
-				C9FCEED924652AF9001957B8 /* Constants.swift */,
 			);
 			path = Treyana;
 			sourceTree = "<group>";
@@ -196,6 +218,8 @@
 				C9D65F612463A69E001BAEFF /* AppDelegate.swift in Sources */,
 				C9D65F632463A69E001BAEFF /* SceneDelegate.swift in Sources */,
 				C919E96A247E265400517288 /* String+count.swift in Sources */,
+				C986C5F425665C1300003A83 /* Alert.swift in Sources */,
+				C986C5F625665D5000003A83 /* AlertError.swift in Sources */,
 				C9FCEEDA24652AFA001957B8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,17 +14,10 @@ enum JsonError: Error {
 }
 
 struct TestDataManager {
-    var stringDataArray: [StringData] {
-        var strArray = [StringData]()
+    var stringDataArray: [StringData]? {
+        let testData = try? getTestData()
         
-        do {
-            let testData = try getTestData()
-            strArray = testData.stringDataArray
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        return strArray
+        return testData?.stringDataArray
     }
         
     //MARK: - Public functions
@@ -98,7 +91,7 @@ struct TestDataManager {
     }
 
     private func getTestData() throws -> TestData {
-        guard let url = JSONFileManager.fileURL else { throw JsonError.cantFindFile }
+        guard let url = JSONFileManager.url else { throw JsonError.cantFindFile }
         let decoder = JSONDecoder()
         
         do {

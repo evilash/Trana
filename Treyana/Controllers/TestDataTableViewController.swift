@@ -43,12 +43,22 @@ extension TestDataTableViewController {
 //MARK: - UITableViewDataSource extension
 extension TestDataTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testDataManager.stringDataArray.count
+        guard let array = testDataManager.stringDataArray else {
+            Alert.create(message: .emptyCount, vc: self)
+            return 0
+        }
+        
+        return array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableView.cellID, for: indexPath)
-        cell.textLabel?.text = testDataManager.stringDataArray[indexPath.row].title
+        
+        if let array = testDataManager.stringDataArray {
+            cell.textLabel?.text = array[indexPath.row].title
+        } else {
+            Alert.create(message: .missingTitle, vc: self)
+        }
         
         return cell
     }
@@ -73,17 +83,21 @@ extension TestDataTableViewController: UITableViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! TestDataViewController
+        guard let array = testDataManager.stringDataArray else {
+            Alert.create(message: .nilArray, vc: self)
+            return
+        }
         
         if let selectedRow = selectedRow {
-            let title = testDataManager.stringDataArray[selectedRow].title
+            let title = array[selectedRow].title
             
             destination.titleString = !title.isEmpty ? title : "Test Set: \(selectedRow)"
-            destination.testString = testDataManager.stringDataArray[selectedRow].testString
-            destination.id = testDataManager.stringDataArray[selectedRow].id
+            destination.testString = array[selectedRow].testString
+            destination.id = array[selectedRow].id
             
             self.selectedRow = nil
         } else {
-            destination.id = testDataManager.stringDataArray.count - 1
+            destination.id = array.count - 1
             destination.titleString = "Test Set \(destination.id)"
         }
     }
